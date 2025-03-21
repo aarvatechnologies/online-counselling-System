@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Online Counselling</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset & Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Full-Screen Gradient Background */
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation Bar */
+        #navi-bar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        #navi-bar li {
+            margin: 0 15px;
+        }
+
+        #navi-bar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        #navi-bar a:hover {
+            background: #f4a261;
+            transform: scale(1.1);
+        }
+
+        /* Service Section */
+        .service-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #f4a261, #2a9d8f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        /* Service List */
+        .service-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .service-list li {
+            font-size: 18px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .service-list li:hover {
+            color: #f4a261;
+            transform: translateX(5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navi-bar {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            #navi-bar li {
+                margin: 5px 0;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <ul id="navi-bar">
+        <li><a href="Education Counselling.html">Education Counselling</a></li>
+        <li><a href="Beauty Counselling.html">Beauty Counselling</a></li>
+        <li><a href="Health & Fitness Counselling.html">Health & Fitness Counselling</a></li>
+    </ul>
+
+    <!-- Service Section -->
+    <div class="service-container">
+        <h1>Online Counselling System</h1>
+        <h2>Our Services</h2>
+        <p>We provide professional counselling services for various aspects of your life.</p>
+        
+        <ul class="service-list">
+            <li>📚 Education Counselling - Guidance for academic success</li>
+            <li>💄 Beauty Counselling - Skincare, haircare, and grooming advice</li>
+            <li>🏋️ Health & Fitness Counselling - Diet, workout, and well-being tips</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

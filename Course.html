@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Counselling System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        select:hover {
+            border-color: #007bff;
+        }
+        p {
+            margin-top: 20px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+            transition: 0.3s;
+        }
+    </style>
+    <script>
+        function showCourseDetails() {
+            var selectedCourse = document.getElementById("courseSelect").value;
+            var courses = {
+                "CS": "To provide knowledge of computer systems, networks, and operating systems, enabling students to understand how different components of computing interact.",
+                "AIDS": "To equip students with a robust understanding of computer science principles while specializing in artificial intelligence, preparing them to innovate and solve complex problems across various domains.",
+                "BCA": "BCA is a 3-year undergraduate degree program that focuses on knowledge of the basics of computer application and software development.",
+                "BBA": "A Bachelor of Business Administration (BBA) is a three-year undergraduate degree program that teaches business management and administration skills.",
+                "B.Tech": "A Bachelor of Technology (B.Tech) is a four-year undergraduate degree program that provides a foundation in engineering principles. It combines theoretical knowledge with practical skills.",
+                "MBA": "A Master of Business Administration (MBA) is a two-year postgraduate program that teaches students business management and related skills. It is a popular choice for professionals who want to advance their careers.",
+                "MCA": "A Master of Computer Applications (MCA) is a postgraduate degree that focuses on computer applications and software development. It's a popular choice for students who want to work in IT.",
+                "M.Tech": "A Master of Technology (M.Tech.) is a two-year postgraduate engineering course. It's available in many specializations, including computer science, civil engineering, and electrical engineering.",
+                "MSC(CS)": "To gain a deep understanding of advanced topics such as algorithms, data structures, artificial intelligence, machine learning, cyber security, and software engineering.",
+                "M.COM": "Master of Commerce (M. Com) course is considered an entry point for professions like chartered accountancy, company secretary, cost and work accountancy, and insurance and banking services. One can also pursue higher studies and become a lecturer and assistant professor at universities."
+            };
+            
+            document.getElementById("courseDetails").innerText = courses[selectedCourse] || "Please select a course to see the details.";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>COURSES AND DETAILS</h3>
+        <label for="courseSelect">Select a Course:</label>
+        <select id="courseSelect" onchange="showCourseDetails()">
+            <option value="">--Select a Course--</option>
+            <option value="CS">CS</option>
+            <option value="AIDS">AIDS</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="MSC(CS)">MSC(CS)</option>
+            <option value="M.COM">M.COM</option>
+        </select>
+        <p id="courseDetails">Please select a course to see the details.</p>
+    </div>
+</body>
+</html>

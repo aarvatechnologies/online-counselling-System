@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Counselling System</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset & Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Full-Screen Background */
+        body {
+            background: url('ocs\ front.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Dark Overlay for Readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        #navi-bar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #navi-bar li {
+            margin: 0 20px;
+        }
+
+        #navi-bar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+            border-radius: 5px;
+        }
+
+        #navi-bar a:hover {
+            background: #f4a261;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Welcome Text */
+        #home {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        #home-para3 {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .home-para {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navi-bar {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            #navi-bar li {
+                margin: 5px 0;
+            }
+
+            #home-para3 {
+                font-size: 40px;
+            }
+
+            .home-para {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <ul id="navi-bar">
+        <li><a class="nav-item" href="login.html">Login</a></li>
+        <li><a class="nav-item" href="service.html">Service</a></li>
+        <li><a class="nav-item" href="registation.html">Registration</a></li>
+        <li><a class="nav-item" href="about us.html">About Us</a></li>
+    </ul>
+
+    <!-- Home Page Content -->
+    <div id="home">
+        <p id="home-para3">Welcome</p>
+        <p class="home-para">Your Personalized Online Counselling System</p>
+    </div>
+</body>
+</html>

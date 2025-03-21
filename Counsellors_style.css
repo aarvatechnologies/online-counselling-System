@@ -1,0 +1,83 @@
+/* background */
+/* header Items */
+#header {
+    height: 150px;
+}
+#logo {
+    display: block;
+    float: left;
+    height: 150px;
+    margin: 0 10px;
+}
+#header h1 {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    line-height: 100px;
+    font-family: Times New Roman;
+    color: White;
+}
+/* Navigation Bar */
+
+#navi-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #22a7f0;
+}
+
+#navi-bar li {
+    display: inline-block;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 15px 10px;
+    font-family: "Times New Roman", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#cho-item {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 15px 10px;
+    font-family: "Times New Roman", Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: black;
+}
+.nav-item:hover {
+    color: white;
+    background-color: #025fc9;
+}
+
+/* body items */
+/* background image */
+#back-img {
+    margin: 0;
+    background-image: url("images/aboutback.jpeg");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#about {
+    padding: 5%;
+}
+.para {
+    color: black;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    margin: 1%;
+}
+

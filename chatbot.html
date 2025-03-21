@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Chatbot</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Chatbot Container */
+        .chat-container {
+            width: 400px;
+            max-width: 100%;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Chat Messages Box */
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Chat Message Styles */
+        .chat-message {
+            max-width: 80%;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background: #e0e0e0;
+            color: black;
+            align-self: flex-start;
+        }
+
+        /* Chat Input Section */
+        .chat-input-container {
+            display: flex;
+            padding: 10px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .send-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .send-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">Smart Chatbot</div>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="chat-input-container">
+            <input type="text" id="userInput" class="chat-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="getAnswer()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Store questions and answers in an object
+        const chatbotData = {
+            "education": {
+                "What is the importance of education?": "Education helps in gaining knowledge, building character, and improving career opportunities.",
+                "What are online learning platforms?": "Some popular platforms are Coursera, Udemy, Khan Academy, and edX.",
+                "How can I improve memory for studying?": "Practice active recall, use flashcards, and take proper breaks while studying.",
+                "What is the best way to learn a new language?": "Regular practice, language apps, and conversing with native speakers help in learning new languages.",
+                "How does education impact society?": "It creates awareness, reduces poverty, and leads to overall societal development."
+            },
+            "health_fitness": {
+                "What are the benefits of daily exercise?": "It improves heart health, boosts immunity, and helps in mental well-being.",
+                "How much water should I drink per day?": "At least 8 glasses (2 liters) of water per day is recommended.",
+                "What foods boost the immune system?": "Citrus fruits, garlic, ginger, and leafy greens help in boosting immunity.",
+                "How can I stay fit without a gym?": "Bodyweight exercises, yoga, and daily walking can help maintain fitness.",
+                "What are common signs of stress?": "Headaches, fatigue, mood swings, and lack of sleep are common stress symptoms."
+            },
+            "beauty_skincare": {
+                "How to get glowing skin naturally?": "Stay hydrated, eat healthy, and use aloe vera or honey masks.",
+                "What is the best routine for oily skin?": "Use a gentle cleanser, oil-free moisturizer, and clay masks for oily skin.",
+                "How to reduce dark circles?": "Use cold compresses, get enough sleep, and apply vitamin C serums.",
+                "What is the importance of sunscreen?": "It protects the skin from UV rays, prevents aging, and reduces pigmentation.",
+                "How to prevent hair fall?": "Eat a protein-rich diet, avoid excessive heat styling, and massage the scalp with oil."
+            }
+        };
+
+        // Function to display chatbot response
+        function getAnswer() {
+            let userInput = document.getElementById("userInput").value.trim().toLowerCase();
+            let chatBox = document.getElementById("chatBox");
+
+            if (userInput === "") return;
+
+            // Display user input
+            chatBox.innerHTML += `<div class="chat-message user-message">${userInput}</div>`;
+
+            let foundAnswer = false;
+            let categoryFound = "";
+
+            for (let category in chatbotData) {
+                for (let question in chatbotData[category]) {
+                    if (userInput === question.toLowerCase()) {
+                        chatBox.innerHTML += `<div class="chat-message bot-message">${chatbotData[category][question]}</div>`;
+                        foundAnswer = true;
+                        break;
+                    }
+                }
+                if (foundAnswer) break;
+            }
+
+            // Suggest questions if no match is found
+            if (!foundAnswer) {
+                // Determine category based on keywords
+                if (userInput.includes("education") || userInput.includes("study")) {
+                    categoryFound = "education";
+                } else if (userInput.includes("health") || userInput.includes("fitness") || userInput.includes("exercise")) {
+                    categoryFound = "health_fitness";
+                } else if (userInput.includes("skin") || userInput.includes("beauty") || userInput.includes("hair")) {
+                    categoryFound = "beauty_skincare";
+                }
+
+                let suggestions = [];
+                if (categoryFound) {
+                    suggestions = Object.keys(chatbotData[categoryFound]).slice(0, 3); // Show first 3 questions from the category
+                }
+
+                let suggestionText = `<div class="chat-message bot-message">I didn't find an exact match. Try asking:<br>`;
+                if (suggestions.length > 0) {
+                    suggestions.forEach(q => {
+                        suggestionText += `➡️ ${q}<br>`;
+                    });
+                } else {
+                    suggestionText += `Try a different question related to education, health, or skincare.`;
+                }
+                suggestionText += `</div>`;
+
+                chatBox.innerHTML += suggestionText;
+            }
+
+            // Clear input field and auto-scroll to bottom
+            document.getElementById("userInput").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                getAnswer();
+            }
+        }
+    </script>
+
+</body>
+</html>

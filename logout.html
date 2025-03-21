@@ -1,0 +1,7 @@
+<html>
+	include('myaccount.html');
+	session_start();
+	session_unset($_SESSION['username']);
+	session_unset($_SESSION['member_id']);
+	header('location:index.php');
+	</html> 

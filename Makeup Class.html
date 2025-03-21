@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Counselling Slot Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url(Makeupclass.PNG);
+            text-align: center;
+            padding: 20px;
+
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 15%;
+          
+        }
+        h2 {
+            color: #d81b60;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #d81b60;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c2185b;
+        }
+        #confirmation {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Beauty Counselling Slot Booking</h2>
+
+        <label for="counselor">Select a Beauty Counselor:</label>
+        <select id="counselor">
+            <option value="Dr Kamal's">Dr Kamal's</option>
+            <option value="Sana's Beauty Clinic">Sana's Beauty Clinic</option>
+            <option value="Dr. Elango">Dr. Elango</option>
+            <option value="Dr. Subhash">Dr. Subhash</option>
+        </select>
+
+        <label for="timeSlot">Select a Time Slot:</label>
+        <select id="timeSlot">
+            <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+            <option value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</option>
+            <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+            <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
+        </select>
+
+        <button onclick="bookSlot()">Book Appointment</button>
+
+        <p id="confirmation"></p>
+    </div>
+
+    <script>
+        function bookSlot() {
+            let counselor = document.getElementById("counselor").value;
+            let timeSlot = document.getElementById("timeSlot").value;
+            document.getElementById("confirmation").innerHTML = 
+                `✅ Appointment booked with <strong>${counselor}</strong> at <strong>${timeSlot}</strong>.`;
+        }
+    </script>
+
+</body>
+</html>

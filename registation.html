@@ -1,0 +1,168 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Online Counselling</title>
+    <style>
+        /* Gradient Background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3, #f4a261, #2a9d8f);
+            margin: 0;
+            height: 100vh;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            text-align: center;
+            margin-left: 20%;
+            margin-top: 15px;
+        }
+        /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+        h1 {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input, textarea, select {
+            width: 80%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+            outline: none;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #2a9d8f;
+            box-shadow: 0 0 10px rgba(42, 157, 143, 0.5);
+        }
+
+        .registerbtn {
+            background: linear-gradient(to right, #f4a261, #2a9d8f);
+            color: white;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .registerbtn:hover {
+            background: linear-gradient(to right, #2a9d8f, #ff758c);
+            transform: scale(1.05);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #fff;
+            background: #2a9d8f;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>  
+<body>  
+    <form id="registrationForm">  
+        <div class="container">  
+            <h1>Register Here!!</h1>  
+            
+            <label for="firstname">First Name</label>   
+            <input type="text" id="firstname" name="firstname" placeholder="Enter First Name" required>   
+            
+            <label for="lastname">Last Name</label>    
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" required>   
+            
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <label for="phone">Phone</label>  
+            <input type="number" id="phone" name="phone" placeholder="Enter Phone Number" required>   
+            
+            
+            <label for="address">Current Address</label>  
+            <textarea id="address" name="address" cols="30" rows="4" placeholder="Enter Address" required></textarea>  
+            
+            <label for="email">Email</label>  
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>  
+            
+            <label for="psw">Password</label>  
+            <input type="password" id="psw" name="psw" placeholder="Enter Password" required>  
+            
+            <label for="psw-repeat">Re-type Password</label>  
+            <input type="password" id="psw-repeat" name="psw-repeat" placeholder="Re-enter Password" required>  
+            
+            <button type="submit" class="registerbtn">Register</button>    
+
+            <!-- Success Message -->
+            <p id="successMessage" class="success-message">✅ Registration Successful!</p>
+        </div>
+    </form>  
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Show success message
+            document.getElementById("successMessage").style.display = "block";
+
+            // Clear input fields after 2 seconds
+            setTimeout(function() {
+                document.getElementById("registrationForm").reset();
+                document.getElementById("successMessage").style.display = "none";
+            }, 2000);
+        });
+    </script>
+</body>  
+</html>

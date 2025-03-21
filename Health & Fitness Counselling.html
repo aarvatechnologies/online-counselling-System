@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Fitness Counselling</title>
+    
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset & Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Full-Screen Gradient Background */
+        body {
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 70px;
+        }
+
+        /* Navigation Bar */
+        #navi-bar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        #navi-bar li {
+            margin: 0 15px;
+        }
+
+        #navi-bar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        #navi-bar a:hover {
+            background: #2ecc71;
+            transform: scale(1.1);
+        }
+
+        /* Header */
+        .header-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navi-bar {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            #navi-bar li {
+                margin: 5px 0;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <ul id="navi-bar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Health&FitnessBlog.html">Health & Fitness Blog</a></li>
+        <li><a href="HealthCounsellors.html">Health Counsellors</a></li>
+        <li><a href="Nutrition.html">Nutrition</a></li>
+        <li><a href="Fitness.html">Fitness</a></li>
+        <li><a href="Exercise.html">Exercise</a></li>
+        <li><a href="chatbot.html">Query</a></li>
+    </ul>
+
+    <!-- Header Section -->
+    <div class="header-container">
+        <h1>Health & Fitness Counselling</h1>
+        <p>Expert advice on nutrition, fitness, and healthy lifestyle choices.</p>
+    </div>
+
+</body>
+
+</html>

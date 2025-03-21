@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Online Counselling System</title>
+    <link href="counsellors_style.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(Counsellors.PNG);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+    </style>
+</head> 
+<body>
+
+    <h1>Online Counselling System</h1>
+    
+    <div class="container">
+        <table>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>Dr. Gopal</td>
+                <td><input type="text" value="9675342510" readonly></td>
+                <td><textarea readonly>Sathy main road, Gobichettiplayam, Erode.</textarea></td>
+            </tr>
+            <tr>
+                <td>Dr. Vivek</td>
+                <td><input type="text" value="9544732883" readonly></td>
+                <td><textarea readonly>Tirupur New Bus Stand backside, Tirupur.</textarea></td>
+            </tr>
+            <tr>
+                <td>Dr. Naveen</td>
+                <td><input type="text" value="9987456300" readonly></td>
+                <td><textarea readonly>Gandipuram, Coimbatore.</textarea></td>
+            </tr>
+            <tr>
+                <td>Dr. Praveena</td>
+                <td><input type="text" value="8635227601" readonly></td>
+                <td><textarea readonly>Avinashi, Tirupur.</textarea></td>
+            </tr>
+            <tr>
+                <td>Dr. Balaji</td>
+                <td><input type="text" value="8764593002" readonly></td>
+                <td><textarea readonly>Chennai.</textarea></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

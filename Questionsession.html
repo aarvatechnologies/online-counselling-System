@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            overflow-y: auto;
+            padding-bottom: 10px;
+        }
+
+        .message {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            max-width: 70%;
+            word-wrap: break-word;
+            display: flex;
+            align-items: center;
+        }
+
+        .sender-message {
+            background-color: #e0e0e0;
+            color: #000;
+            align-self: flex-start;
+        }
+
+        .receiver-message {
+            background-color: #4CAF50;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .input-container button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function sendMessage() {
+            var inputField = document.getElementById("userMessage");
+            var messageText = inputField.value.trim();
+            if (messageText === "") return;
+
+            var messageContainer = document.getElementById("messageContainer");
+            
+            // Add user message
+            var userMessage = document.createElement("div");
+            userMessage.classList.add("message", "sender-message");
+            userMessage.innerHTML = `<img src="sender-avatar.png" alt="Sender Avatar" class="avatar"> ${messageText}`;
+            messageContainer.appendChild(userMessage);
+
+            // Auto-reply from bot
+            setTimeout(function() {
+                var botMessage = document.createElement("div");
+                botMessage.classList.add("message", "receiver-message");
+                botMessage.innerHTML = `<img src="receiver-avatar.png" alt="Receiver Avatar" class="avatar"> I'm a bot! You said: ${messageText}`;
+                messageContainer.appendChild(botMessage);
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }, 1000);
+
+            inputField.value = "";
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }
+    </script>
+    <title>Chatbot UI</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="message-container" id="messageContainer">
+            <div class="message receiver-message">
+                <img src="receiver-avatar.png" alt="Receiver Avatar" class="avatar">
+                Hi! How can I help you today?
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userMessage" placeholder="Type your message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>
