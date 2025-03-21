@@ -2,8 +2,25 @@
 <html>
 
 <head>
-    <title>HTML Login Form</title>
+    <title>Login Form</title>
     <link href="login_style.css" rel="stylesheet">
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var username = document.getElementById("first").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please fill in all fields.");
+            } else {
+                alert("Registration successful! Redirecting to homepage...");
+                setTimeout(function () {
+                    window.location.href = "index.html"; // Redirect to index page
+                }, 1000); // 2-second delay
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -11,33 +28,22 @@
         <h1>ONLINE COUNSELLING SYSTEM</h1>
         <h3>Enter your login credentials</h3>
 
-        <form action="">
-            <label for="first">
-                Username:
-            </label>
-            <input type="text" id="first" name="first" 
-                placeholder="Enter your Username" required>
+        <form id="loginForm" onsubmit="validateForm(event)">
+            <label for="first">Username:</label>
+            <input type="text" id="first" name="first" placeholder="Enter your Username" required>
 
-            <label for="password">
-                Password:
-            </label>
-            <input type="password" id="password" name="password" 
-                placeholder="Enter your Password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
 
             <div class="wrap">
-                <button type="submit">
-                    Submit
-                </button>
+                <button type="submit">Submit</button>
             </div>
         </form>
-        
+
         <p>Not registered?
-            <a href="#" style="text-decoration: none;">
-                Create an account
-            </a>
+            <a href="register.html" style="text-decoration: none;">Create an account</a>
         </p>
     </div>
 </body>
 
 </html>
-
