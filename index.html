@@ -99,6 +99,22 @@
             opacity: 0.9;
             animation: slideIn 1.5s ease-in-out;
         }
+        .burger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px;
+    transition: 0.4s;
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -111,26 +127,40 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            #navi-bar {
-                flex-direction: column;
-                align-items: center;
-                padding: 10px 0;
-            }
+       @media (max-width: 768px) {
+    #navi-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+    }
 
-            #navi-bar li {
-                margin: 5px 0;
-            }
+    #navi-bar.show {
+        display: flex;
+    }
 
-            #home-para3 {
-                font-size: 40px;
-            }
+    .burger {
+        display: block;
+    }
+}
 
-            .home-para {
-                font-size: 20px;
-            }
-        }
+/* Burger Animation */
+.burger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
     </style>
 </head>
 <body>
@@ -141,6 +171,11 @@
         <li><a class="nav-item" href="registation.html">Registration</a></li>
         <li><a class="nav-item" href="about us.html">About Us</a></li>
     </ul>
+        <div class="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
 
     <!-- Home Page Content -->
     <div id="home">
@@ -148,4 +183,15 @@
         <p class="home-para">Your Personalized Online Counselling System</p>
     </div>
 </body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector("#navi-bar");
+
+        burger.addEventListener("click", function () {
+            nav.classList.toggle("show");
+            burger.classList.toggle("toggle");
+        });
+    });
+</script>
 </html>
